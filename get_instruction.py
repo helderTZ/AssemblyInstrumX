@@ -1,4 +1,4 @@
-from instruction_id_v10 import *
+from instruction_id import *
 from instruction_counter import *
 
 import re
