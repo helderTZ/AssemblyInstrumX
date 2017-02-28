@@ -40,7 +40,7 @@ def sort_instructions():
                 continue
             
             words = line.split('\t')
-            words = words[:-2]
+            words = words[:-1]
             if words[0] in compute_labels:
                 compute_list.append('COMPUTE' + '\t' + '\t'.join(words))
             elif words[0] in memory_labels:
@@ -49,6 +49,8 @@ def sort_instructions():
                 comp_mem_list.append('COMP+MEM' + '\t' + '\t'.join(words))
             else:
                 others_list.append('OTHERS' + '\t' + '\t'.join(words))
+                
+                
     
     # sort COMPUTE list by data type and SIMD/scalar
     dpfp_vector_indices = []
@@ -62,46 +64,26 @@ def sort_instructions():
     int_others_indices = []
     others_indices = []
     for i in range(len(compute_list)):
-        if 'DP FP' and 'SIMD' in compute_list[i]:
-            dpfp_vector_indices.append(i)
-        elif 'DP FP' and 'SCALAR' in compute_list[i]:
-            dpfp_scalar_indices.append(i)
-        elif 'DP FP' in compute_list[i]:
-            dpfp_others_indices.append(i)
-        elif 'SP FP' and 'SIMD' in compute_list[i]:
-            spfp_vector_indices.append(i)
-        elif 'SP FP' and 'SCALAR' in compute_list[i]:
-            spfp_scalar_indices.append(i)
-        elif 'SP FP' in compute_list[i]:
-            spfp_others_indices.append(i)
-        elif 'INT' and 'SIMD' in compute_list[i]:
-            int_vector_indices.append(i)
-        elif 'INT' and 'SCALAR' in compute_list[i]:
-            int_scalar_indices.append(i)
-        elif 'INT' in compute_list[i]:
-            int_others_indices.append(i)
-        else:
-            others_indices.append(i)
-    for i in dpfp_vector_indices:
-        ordered_comp_list.append(compute_list[i])
-    for i in dpfp_scalar_indices:
-        ordered_comp_list.append(compute_list[i])
-    for i in dpfp_others_indices:
-        ordered_comp_list.append(compute_list[i])
-    for i in spfp_vector_indices:
-        ordered_comp_list.append(compute_list[i])
-    for i in spfp_scalar_indices:
-        ordered_comp_list.append(compute_list[i])
-    for i in spfp_others_indices:
-        ordered_comp_list.append(compute_list[i])
-    for i in int_vector_indices:
-        ordered_comp_list.append(compute_list[i])
-    for i in int_scalar_indices:
-        ordered_comp_list.append(compute_list[i])
-    for i in int_others_indices:
-        ordered_comp_list.append(compute_list[i])
-    for i in others_indices:
-        ordered_comp_list.append(compute_list[i])
+        if   'DP FP' and 'SIMD'   in compute_list[i]: dpfp_vector_indices.append(i)
+        elif 'DP FP' and 'SCALAR' in compute_list[i]: dpfp_scalar_indices.append(i)
+        elif 'DP FP'              in compute_list[i]: dpfp_others_indices.append(i)
+        elif 'SP FP' and 'SIMD'   in compute_list[i]: spfp_vector_indices.append(i)
+        elif 'SP FP' and 'SCALAR' in compute_list[i]: spfp_scalar_indices.append(i)
+        elif 'SP FP'              in compute_list[i]: spfp_others_indices.append(i)
+        elif 'INT'   and 'SIMD'   in compute_list[i]: int_vector_indices.append(i)
+        elif 'INT'   and 'SCALAR' in compute_list[i]: int_scalar_indices.append(i)
+        elif 'INT'                in compute_list[i]: int_others_indices.append(i)
+        else:                                         others_indices.append(i)
+    for i in dpfp_vector_indices: ordered_comp_list.append(compute_list[i])
+    for i in dpfp_scalar_indices: ordered_comp_list.append(compute_list[i])
+    for i in dpfp_others_indices: ordered_comp_list.append(compute_list[i])
+    for i in spfp_vector_indices: ordered_comp_list.append(compute_list[i])
+    for i in spfp_scalar_indices: ordered_comp_list.append(compute_list[i])
+    for i in spfp_others_indices: ordered_comp_list.append(compute_list[i])
+    for i in int_vector_indices:  ordered_comp_list.append(compute_list[i])
+    for i in int_scalar_indices:  ordered_comp_list.append(compute_list[i])
+    for i in int_others_indices:  ordered_comp_list.append(compute_list[i])
+    for i in others_indices:      ordered_comp_list.append(compute_list[i])
     
     # sort MEMORY list by data type and SIMD/scalar
     dpfp_vector_indices = []
@@ -115,46 +97,26 @@ def sort_instructions():
     int_others_indices = []
     others_indices = []
     for i in range(len(memory_list)):
-        if 'DP FP' and 'SIMD' in memory_list[i]:
-            dpfp_vector_indices.append(i)
-        elif 'DP FP' and 'SCALAR' in memory_list[i]:
-            dpfp_scalar_indices.append(i)
-        elif 'DP FP' in memory_list[i]:
-            dpfp_others_indices.append(i)
-        elif 'SP FP' and 'SIMD' in memory_list[i]:
-            spfp_vector_indices.append(i)
-        elif 'SP FP' and 'SCALAR' in memory_list[i]:
-            spfp_scalar_indices.append(i)
-        if 'SP FP' in memory_list[i]:
-            spfp_others_indices.append(i)
-        elif 'INT' and 'SIMD' in memory_list[i]:
-            int_vector_indices.append(i)
-        elif 'INT' and 'SCALAR' in memory_list[i]:
-            int_scalar_indices.append(i)
-        elif 'INT' in memory_list[i]:
-            int_others_indices.append(i)
-        else:
-            others_indices.append(i)
-    for i in dpfp_vector_indices:
-        ordered_mem_list.append(memory_list[i])
-    for i in dpfp_scalar_indices:
-        ordered_mem_list.append(memory_list[i])
-    for i in dpfp_others_indices:
-        ordered_mem_list.append(memory_list[i])
-    for i in spfp_vector_indices:
-        ordered_mem_list.append(memory_list[i])
-    for i in spfp_scalar_indices:
-        ordered_mem_list.append(memory_list[i])
-    for i in spfp_others_indices:
-        ordered_mem_list.append(memory_list[i])
-    for i in int_vector_indices:
-        ordered_mem_list.append(memory_list[i])
-    for i in int_scalar_indices:
-        ordered_mem_list.append(memory_list[i])
-    for i in int_others_indices:
-        ordered_mem_list.append(memory_list[i])
-    for i in others_indices:
-        ordered_mem_list.append(memory_list[i])
+        if   'DP FP' and 'SIMD'   in memory_list[i]: dpfp_vector_indices.append(i)
+        elif 'DP FP' and 'SCALAR' in memory_list[i]: dpfp_scalar_indices.append(i)
+        elif 'DP FP'              in memory_list[i]: dpfp_others_indices.append(i)
+        elif 'SP FP' and 'SIMD'   in memory_list[i]: spfp_vector_indices.append(i)
+        elif 'SP FP' and 'SCALAR' in memory_list[i]: spfp_scalar_indices.append(i)
+        elif  'SP FP'             in memory_list[i]: spfp_others_indices.append(i)
+        elif 'INT'   and 'SIMD'   in memory_list[i]: int_vector_indices.append(i)
+        elif 'INT'   and 'SCALAR' in memory_list[i]: int_scalar_indices.append(i)
+        elif 'INT'                in memory_list[i]: int_others_indices.append(i)
+        else:                                        others_indices.append(i)
+    for i in dpfp_vector_indices: ordered_mem_list.append(memory_list[i])
+    for i in dpfp_scalar_indices: ordered_mem_list.append(memory_list[i])
+    for i in dpfp_others_indices: ordered_mem_list.append(memory_list[i])
+    for i in spfp_vector_indices: ordered_mem_list.append(memory_list[i])
+    for i in spfp_scalar_indices: ordered_mem_list.append(memory_list[i])
+    for i in spfp_others_indices: ordered_mem_list.append(memory_list[i])
+    for i in int_vector_indices:  ordered_mem_list.append(memory_list[i])
+    for i in int_scalar_indices:  ordered_mem_list.append(memory_list[i])
+    for i in int_others_indices:  ordered_mem_list.append(memory_list[i])
+    for i in others_indices:      ordered_mem_list.append(memory_list[i])
         
         
     # sort COMPUTE+MEMORY list by data type and SIMD/scalar
@@ -169,46 +131,26 @@ def sort_instructions():
     int_others_indices = []
     others_indices = []
     for i in range(len(comp_mem_list)):
-        if 'DP FP' and 'SIMD' in comp_mem_list[i]:
-            dpfp_vector_indices.append(i)
-        elif 'DP FP' and 'SCALAR' in comp_mem_list[i]:
-            dpfp_scalar_indices.append(i)
-        elif 'DP FP' in comp_mem_list[i]:
-            dpfp_vector_indices.append(i)
-        elif 'SP FP' and 'SIMD' in comp_mem_list[i]:
-            spfp_others_indices.append(i)
-        elif 'SP FP' and 'SCALAR' in comp_mem_list[i]:
-            spfp_scalar_indices.append(i)
-        elif 'SP FP' in comp_mem_list[i]:
-            spfp_others_indices.append(i)
-        elif 'INT' and 'SIMD' in comp_mem_list[i]:
-            int_vector_indices.append(i)
-        elif 'INT' and 'SCALAR' in comp_mem_list[i]:
-            int_scalar_indices.append(i)
-        elif 'INT' in comp_mem_list[i]:
-            int_others_indices.append(i)
-        else:
-            others_indices.append(i)
-    for i in dpfp_vector_indices:
-        ordered_comp_mem_list.append(comp_mem_list[i])
-    for i in dpfp_scalar_indices:
-        ordered_comp_mem_list.append(comp_mem_list[i])
-    for i in dpfp_others_indices:
-        ordered_comp_mem_list.append(comp_mem_list[i])
-    for i in spfp_vector_indices:
-        ordered_comp_mem_list.append(comp_mem_list[i])
-    for i in spfp_scalar_indices:
-        ordered_comp_mem_list.append(comp_mem_list[i])
-    for i in spfp_others_indices:
-        ordered_comp_mem_list.append(comp_mem_list[i])
-    for i in int_vector_indices:
-        ordered_comp_mem_list.append(comp_mem_list[i])
-    for i in int_scalar_indices:
-        ordered_comp_mem_list.append(comp_mem_list[i])
-    for i in int_others_indices:
-        ordered_comp_mem_list.append(comp_mem_list[i])
-    for i in others_indices:
-        ordered_comp_mem_list.append(comp_mem_list[i])
+        if   'DP FP' and 'SIMD'   in comp_mem_list[i]: dpfp_vector_indices.append(i)
+        elif 'DP FP' and 'SCALAR' in comp_mem_list[i]: dpfp_scalar_indices.append(i)
+        elif 'DP FP'              in comp_mem_list[i]: dpfp_others_indices.append(i)
+        elif 'SP FP' and 'SIMD'   in comp_mem_list[i]: spfp_vector_indices.append(i)
+        elif 'SP FP' and 'SCALAR' in comp_mem_list[i]: spfp_scalar_indices.append(i)
+        elif 'SP FP'              in comp_mem_list[i]: spfp_others_indices.append(i)
+        elif 'INT'   and 'SIMD'   in comp_mem_list[i]: int_vector_indices.append(i)
+        elif 'INT'   and 'SCALAR' in comp_mem_list[i]: int_scalar_indices.append(i)
+        elif 'INT'                in comp_mem_list[i]: int_others_indices.append(i)
+        else:                                          others_indices.append(i)
+    for i in dpfp_vector_indices: ordered_comp_mem_list.append(comp_mem_list[i])
+    for i in dpfp_scalar_indices: ordered_comp_mem_list.append(comp_mem_list[i])
+    for i in dpfp_others_indices: ordered_comp_mem_list.append(comp_mem_list[i])
+    for i in spfp_vector_indices: ordered_comp_mem_list.append(comp_mem_list[i])
+    for i in spfp_scalar_indices: ordered_comp_mem_list.append(comp_mem_list[i])
+    for i in spfp_others_indices: ordered_comp_mem_list.append(comp_mem_list[i])
+    for i in int_vector_indices:  ordered_comp_mem_list.append(comp_mem_list[i])
+    for i in int_scalar_indices:  ordered_comp_mem_list.append(comp_mem_list[i])
+    for i in int_others_indices:  ordered_comp_mem_list.append(comp_mem_list[i])
+    for i in others_indices:      ordered_comp_mem_list.append(comp_mem_list[i])
         
     # sort Others list by data type and SIMD/scalar
     dpfp_vector_indices = []
@@ -222,46 +164,26 @@ def sort_instructions():
     int_others_indices = []
     others_indices = []
     for i in range(len(others_list)):
-        if 'DP FP' and 'SIMD' in others_list[i]:
-            dpfp_vector_indices.append(i)
-        elif 'DP FP' and 'SCALAR' in others_list[i]:
-            dpfp_scalar_indices.append(i)
-        elif 'DP FP' in others_list[i]:
-            dpfp_others_indices.append(i)
-        elif 'SP FP' and 'SIMD' in others_list[i]:
-            spfp_vector_indices.append(i)
-        elif 'SP FP' and 'SCALAR' in others_list[i]:
-            spfp_scalar_indices.append(i)
-        if 'SP FP' in others_list[i]:
-            spfp_others_indices.append(i)
-        elif 'INT' and 'SIMD' in others_list[i]:
-            int_vector_indices.append(i)
-        elif 'INT' and 'SCALAR' in others_list[i]:
-            int_scalar_indices.append(i)
-        elif 'INT' in others_list[i]:
-            int_others_indices.append(i)
-        else:
-            others_indices.append(i)
-    for i in dpfp_vector_indices:
-        ordered_others_list.append(others_list[i])
-    for i in dpfp_scalar_indices:
-        ordered_others_list.append(others_list[i])
-    for i in dpfp_others_indices:
-        ordered_others_list.append(others_list[i])
-    for i in spfp_vector_indices:
-        ordered_others_list.append(others_list[i])
-    for i in spfp_scalar_indices:
-        ordered_others_list.append(others_list[i])
-    for i in spfp_others_indices:
-        ordered_others_list.append(others_list[i])
-    for i in int_vector_indices:
-        ordered_others_list.append(others_list[i])
-    for i in int_scalar_indices:
-        ordered_others_list.append(others_list[i])
-    for i in int_others_indices:
-        ordered_others_list.append(others_list[i])
-    for i in others_indices:
-        ordered_others_list.append(others_list[i])
+        if   'DP FP' and 'SIMD'   in others_list[i]: dpfp_vector_indices.append(i)
+        elif 'DP FP' and 'SCALAR' in others_list[i]: dpfp_scalar_indices.append(i)
+        elif 'DP FP'              in others_list[i]: dpfp_others_indices.append(i)
+        elif 'SP FP' and 'SIMD'   in others_list[i]: spfp_vector_indices.append(i)
+        elif 'SP FP' and 'SCALAR' in others_list[i]: spfp_scalar_indices.append(i)
+        elif 'SP FP'              in others_list[i]: spfp_others_indices.append(i)
+        elif 'INT'   and 'SIMD'   in others_list[i]: int_vector_indices.append(i)
+        elif 'INT'   and 'SCALAR' in others_list[i]: int_scalar_indices.append(i)
+        elif 'INT'                in others_list[i]: int_others_indices.append(i)
+        else:                                        others_indices.append(i)
+    for i in dpfp_vector_indices: ordered_others_list.append(others_list[i])
+    for i in dpfp_scalar_indices: ordered_others_list.append(others_list[i])
+    for i in dpfp_others_indices: ordered_others_list.append(others_list[i])
+    for i in spfp_vector_indices: ordered_others_list.append(others_list[i])
+    for i in spfp_scalar_indices: ordered_others_list.append(others_list[i])
+    for i in spfp_others_indices: ordered_others_list.append(others_list[i])
+    for i in int_vector_indices:  ordered_others_list.append(others_list[i])
+    for i in int_scalar_indices:  ordered_others_list.append(others_list[i])
+    for i in int_others_indices:  ordered_others_list.append(others_list[i])
+    for i in others_indices:      ordered_others_list.append(others_list[i])
         
     
     
@@ -270,67 +192,71 @@ def sort_instructions():
     temp = []
     for i in ordered_comp_list:
         words = i.split('\t')
-        temp.append(words[0] + '\t' + words[3] + '\t' + words[2] + '\t' + words[1])
+        temp.append(words[0] + '\t' + words[4] + '\t' + words[3] + '\t' + words[2] + '\t' + words[1])
     ordered_comp_list = temp.copy()
     temp = []
     for i in ordered_mem_list:
         words = i.split('\t')
-        temp.append(words[0] + '\t' + words[3] + '\t' + words[2] + '\t' + words[1])
+        temp.append(words[0] + '\t' + words[4] + '\t' + words[3] + '\t' + words[2] + '\t' + words[1])
     ordered_mem_list = temp.copy()
     temp = []
     for i in ordered_comp_mem_list:
         words = i.split('\t')
-        temp.append(words[0] + '\t' + words[3] + '\t' + words[2] + '\t' + words[1])
+        temp.append(words[0] + '\t' + words[4] + '\t' + words[3] + '\t' + words[2] + '\t' + words[1])
     ordered_comp_mem_list = temp.copy()
     temp = []
     for i in ordered_comp_mem_list:
         words = i.split('\t')
-        temp.append(words[0] + '\t' + words[3] + '\t' + words[2] + '\t' + words[1])
+        temp.append(words[0] + '\t' + words[4] + '\t' + words[3] + '\t' + words[2] + '\t' + words[1])
     ordered_comp_mem_list = temp.copy()
     temp = []
     for i in ordered_others_list:
         words = i.split('\t')
-        temp.append(words[0] + '\t' + words[3] + '\t' + words[2] + '\t' + words[1])
+        temp.append(words[0] + '\t' + words[4] + '\t' + words[3] + '\t' + words[2] + '\t' + words[1])
     ordered_others_list = temp.copy()
     
     
     # count instructions
     comp_dict = {}
+    ordered_comp_keys = []
     mem_dict = {}
+    ordered_mem_keys = []
     comp_mem_dict = {}
+    ordered_comp_mem_keys = []
     others_dict = {}
+    ordered_others_keys = []
     for i in ordered_comp_list:
         if i in comp_dict:
             comp_dict[i] += 1
         else:
             comp_dict[i] = 1
+            ordered_comp_keys.append(i)
     for i in ordered_mem_list:
         if i in mem_dict:
             mem_dict[i] += 1
         else:
             mem_dict[i] = 1
+            ordered_mem_keys.append(i)
     for i in ordered_comp_mem_list:
         if i in comp_mem_dict:
             comp_mem_dict[i] += 1
         else:
             comp_mem_dict[i] = 1
+            ordered_comp_mem_keys.append(i)
     for i in ordered_others_list:
         if i in others_dict:
             others_dict[i] += 1
         else:
             others_dict[i] = 1
+            ordered_others_keys.append(i)
     
     
     # dump to file
     with open('ordered_opcodes.txt', 'w') as f:
-        for key in comp_dict:
-            print(key + '\t' + str(comp_dict[key]), file=f)
-        for key in mem_dict:
-            print(key + '\t' + str(mem_dict[key]), file=f)
-        for key in comp_mem_dict:
-            print(key + '\t' + str(comp_mem_dict[key]), file=f)
-        for key in others_dict:
-            print(key + '\t' + str(others_dict[key]), file=f)
+        for key in ordered_comp_keys:     print(key + '\t' + str(comp_dict[key]),     file=f)
+        for key in ordered_mem_keys:      print(key + '\t' + str(mem_dict[key]),      file=f)
+        for key in ordered_comp_mem_keys: print(key + '\t' + str(comp_mem_dict[key]), file=f)
+        for key in ordered_others_keys:   print(key + '\t' + str(others_dict[key]),   file=f)
     
     # DEBUG
     with open('ordered_ocodes_d.txt', 'w') as f:
