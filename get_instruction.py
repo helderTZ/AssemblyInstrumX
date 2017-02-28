@@ -221,7 +221,7 @@ with open('instructions.txt') as f:
                                 uOp = True
                         else:
                             label = l
-                    if label != '' and not ('LD' in possibleLabels and 'ST' in possibleLabels and 'MOV' in possibleLabels):
+                    if label != '' and (not 'LD' in possibleLabels and not 'ST' in possibleLabels and not 'MOV' in possibleLabels):
                         labels.append(label)
                         labeled = True
                         
@@ -313,8 +313,8 @@ print('bytes: ' + '\t' + str(len(dataTraffic)))
 f = open('opcodes.txt', 'w')
 line = ''
 for i in range(len(opcodes)):
-    #line = opcodes[i] + '\t' + labels[i] + '\t' + str(insSets[i]) + '\t' + str(dataModes[i]) + '\t'+ str(dataTypes[i]) + '\t' + str(dataTraffic[i])
-    line = labels[i] + '\t' + str(insSets[i]) +'\t' + str(dataModes[i]) + '\t'+ str(dataTypes[i]) + '\t' + str(dataTraffic[i])
+    line = opcodes[i] + '\t' + labels[i] + '\t' + str(insSets[i]) + '\t' + str(dataModes[i]) + '\t'+ str(dataTypes[i]) + '\t' + str(dataTraffic[i])
+    #line = labels[i] + '\t' + str(insSets[i]) +'\t' + str(dataModes[i]) + '\t'+ str(dataTypes[i]) + '\t' + str(dataTraffic[i])
     print(line, file=f)
     f.flush()
 f.close()
