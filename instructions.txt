@@ -1,301 +1,177 @@
 Block 1:
-prefetcht2z  -0x80(%rcx)
-vxorpd %ymm4, %ymm4, %ymm4
-vbroadcastsdq  -0x80(%rbp), %ymm3
-vxorpd %ymm5, %ymm5, %ymm5
-vmovupdy  -0x80(%r8), %ymm0
-vxorpd %ymm6, %ymm6, %ymm6
-vmovupdy  -0x60(%r8), %ymm1
-vxorpd %ymm7, %ymm7, %ymm7
-vmovupdy  -0x40(%r8), %ymm2
-vxorpd %ymm8, %ymm8, %ymm8
-vxorpd %ymm9, %ymm9, %ymm9
-prefetcht0z  0x18(%r14)
-prefetcht0z  0x18(%r14,%r11,1)
-vxorpd %ymm10, %ymm10, %ymm10
-vxorpd %ymm11, %ymm11, %ymm11
-prefetcht0z  0x18(%r15)
-prefetcht0z  0x18(%r15,%r11,1)
-vxorpd %ymm12, %ymm12, %ymm12
-vxorpd %ymm13, %ymm13, %ymm13
-vxorpd %ymm14, %ymm14, %ymm14
-vxorpd %ymm15, %ymm15, %ymm15
-mov %r8, %rbx
-mov %rdx, %rax
-sar $0x2, %rax
-jle 0xaaac30 <Block 9>
-Block 2:
-sub $0x22, %rax
-jle 0xaaaa00 <Block 6>
-Block 3:
-nopw  %ax, (%rax,%rax,1)
-Block 4:
-vfmadd231pd %ymm0, %ymm3, %ymm4
-vfmadd231pd %ymm1, %ymm3, %ymm8
-vfmadd231pd %ymm2, %ymm3, %ymm12
-vbroadcastsdq  -0x78(%rbp), %ymm3
-prefetcht0z  0x200(%rbp)
-prefetcht0z  0x240(%rbx)
-vfmadd231pd %ymm0, %ymm3, %ymm5
-vfmadd231pd %ymm1, %ymm3, %ymm9
-vfmadd231pd %ymm2, %ymm3, %ymm13
-vbroadcastsdq  -0x70(%rbp), %ymm3
-vfmadd231pd %ymm0, %ymm3, %ymm6
-vfmadd231pd %ymm1, %ymm3, %ymm10
-vfmadd231pd %ymm2, %ymm3, %ymm14
-vbroadcastsdq  -0x68(%rbp), %ymm3
-prefetcht0z  0x280(%rbx)
-vfmadd231pd %ymm0, %ymm3, %ymm7
-vmovupdy  -0x20(%rbx), %ymm0
-vfmadd231pd %ymm1, %ymm3, %ymm11
-vmovupdy  (%rbx), %ymm1
-vfmadd231pd %ymm2, %ymm3, %ymm15
-vmovupdy  0x20(%rbx), %ymm2
-vbroadcastsdq  -0x60(%rbp), %ymm3
-vfmadd231pd %ymm0, %ymm3, %ymm4
-vfmadd231pd %ymm1, %ymm3, %ymm8
-vfmadd231pd %ymm2, %ymm3, %ymm12
-vbroadcastsdq  -0x58(%rbp), %ymm3
-vfmadd231pd %ymm0, %ymm3, %ymm5
-vfmadd231pd %ymm1, %ymm3, %ymm9
-vfmadd231pd %ymm2, %ymm3, %ymm13
-vbroadcastsdq  -0x50(%rbp), %ymm3
-prefetcht0z  0x2c0(%rbx)
-vfmadd231pd %ymm0, %ymm3, %ymm6
-vfmadd231pd %ymm1, %ymm3, %ymm10
-vfmadd231pd %ymm2, %ymm3, %ymm14
-vbroadcastsdq  -0x48(%rbp), %ymm3
-vfmadd231pd %ymm0, %ymm3, %ymm7
-vmovupdy  0x40(%rbx), %ymm0
-vfmadd231pd %ymm1, %ymm3, %ymm11
-vmovupdy  0x60(%rbx), %ymm1
-vfmadd231pd %ymm2, %ymm3, %ymm15
-vmovupdy  0x80(%rbx), %ymm2
-vbroadcastsdq  -0x40(%rbp), %ymm3
-vfmadd231pd %ymm0, %ymm3, %ymm4
-vfmadd231pd %ymm1, %ymm3, %ymm8
-prefetcht0z  0x240(%rbp)
-prefetcht0z  0x300(%rbx)
-vfmadd231pd %ymm2, %ymm3, %ymm12
-vbroadcastsdq  -0x38(%rbp), %ymm3
-vfmadd231pd %ymm0, %ymm3, %ymm5
-vfmadd231pd %ymm1, %ymm3, %ymm9
-vfmadd231pd %ymm2, %ymm3, %ymm13
-vbroadcastsdq  -0x30(%rbp), %ymm3
-vfmadd231pd %ymm0, %ymm3, %ymm6
-vfmadd231pd %ymm1, %ymm3, %ymm10
-vfmadd231pd %ymm2, %ymm3, %ymm14
-vbroadcastsdq  -0x28(%rbp), %ymm3
-prefetcht0z  0x340(%rbx)
-vfmadd231pd %ymm0, %ymm3, %ymm7
-vmovupdy  0xa0(%rbx), %ymm0
-vfmadd231pd %ymm1, %ymm3, %ymm11
-vmovupdy  0xc0(%rbx), %ymm1
-vfmadd231pd %ymm2, %ymm3, %ymm15
-vmovupdy  0xe0(%rbx), %ymm2
-vbroadcastsdq  -0x20(%rbp), %ymm3
-vfmadd231pd %ymm0, %ymm3, %ymm4
-vfmadd231pd %ymm1, %ymm3, %ymm8
-vfmadd231pd %ymm2, %ymm3, %ymm12
-vbroadcastsdq  -0x18(%rbp), %ymm3
-prefetcht0z  0x380(%rbx)
-vfmadd231pd %ymm0, %ymm3, %ymm5
-vfmadd231pd %ymm1, %ymm3, %ymm9
-vfmadd231pd %ymm2, %ymm3, %ymm13
-vbroadcastsdq  -0x10(%rbp), %ymm3
-vfmadd231pd %ymm0, %ymm3, %ymm6
-vfmadd231pd %ymm1, %ymm3, %ymm10
-vfmadd231pd %ymm2, %ymm3, %ymm14
-vbroadcastsdq  -0x8(%rbp), %ymm3
-sub $0xffffffffffffff80, %rbp
-vfmadd231pd %ymm0, %ymm3, %ymm7
-vmovupdy  0x100(%rbx), %ymm0
-vfmadd231pd %ymm1, %ymm3, %ymm11
-vmovupdy  0x120(%rbx), %ymm1
-vfmadd231pd %ymm2, %ymm3, %ymm15
-vmovupdy  0x140(%rbx), %ymm2
-sub $0xfffffffffffffe80, %rbx
-sub $0x1, %rax
-vbroadcastsdq  -0x80(%rbp), %ymm3
-jnle 0xaaa810 <Block 4>
-Block 5:
-nopl  %eax, (%rax)
-Block 6:
-prefetcht2z  -0x40(%rcx)
-prefetcht0z  0x18(%r14)
-prefetcht0z  0x18(%r14,%r11,1)
-prefetcht0z  0x18(%r15)
-prefetcht0z  0x18(%r15,%r11,1)
-prefetcht0z  0x58(%r14)
-prefetcht0z  0x58(%r14,%r11,1)
-prefetcht0z  0x58(%r15)
-prefetcht0z  0x58(%r15,%r11,1)
-add $0x22, %rax
-prefetcht2z  (%rcx)
-nopw  %ax, (%rax,%rax,1)
-Block 7:
-vfmadd231pd %ymm0, %ymm3, %ymm4
-vfmadd231pd %ymm1, %ymm3, %ymm8
-vfmadd231pd %ymm2, %ymm3, %ymm12
-vbroadcastsdq  -0x78(%rbp), %ymm3
-prefetcht0z  0x200(%rbp)
-prefetcht0z  0x240(%rbx)
-vfmadd231pd %ymm0, %ymm3, %ymm5
-vfmadd231pd %ymm1, %ymm3, %ymm9
-vfmadd231pd %ymm2, %ymm3, %ymm13
-vbroadcastsdq  -0x70(%rbp), %ymm3
-vfmadd231pd %ymm0, %ymm3, %ymm6
-vfmadd231pd %ymm1, %ymm3, %ymm10
-vfmadd231pd %ymm2, %ymm3, %ymm14
-vbroadcastsdq  -0x68(%rbp), %ymm3
-prefetcht0z  0x280(%rbx)
-vfmadd231pd %ymm0, %ymm3, %ymm7
-vmovupdy  -0x20(%rbx), %ymm0
-vfmadd231pd %ymm1, %ymm3, %ymm11
-vmovupdy  (%rbx), %ymm1
-vfmadd231pd %ymm2, %ymm3, %ymm15
-vmovupdy  0x20(%rbx), %ymm2
-vbroadcastsdq  -0x60(%rbp), %ymm3
-vfmadd231pd %ymm0, %ymm3, %ymm4
-vfmadd231pd %ymm1, %ymm3, %ymm8
-vfmadd231pd %ymm2, %ymm3, %ymm12
-vbroadcastsdq  -0x58(%rbp), %ymm3
-vfmadd231pd %ymm0, %ymm3, %ymm5
-vfmadd231pd %ymm1, %ymm3, %ymm9
-vfmadd231pd %ymm2, %ymm3, %ymm13
-vbroadcastsdq  -0x50(%rbp), %ymm3
-prefetcht0z  0x2c0(%rbx)
-vfmadd231pd %ymm0, %ymm3, %ymm6
-vfmadd231pd %ymm1, %ymm3, %ymm10
-vfmadd231pd %ymm2, %ymm3, %ymm14
-vbroadcastsdq  -0x48(%rbp), %ymm3
-vfmadd231pd %ymm0, %ymm3, %ymm7
-vmovupdy  0x40(%rbx), %ymm0
-vfmadd231pd %ymm1, %ymm3, %ymm11
-vmovupdy  0x60(%rbx), %ymm1
-vfmadd231pd %ymm2, %ymm3, %ymm15
-vmovupdy  0x80(%rbx), %ymm2
-vbroadcastsdq  -0x40(%rbp), %ymm3
-vfmadd231pd %ymm0, %ymm3, %ymm4
-vfmadd231pd %ymm1, %ymm3, %ymm8
-prefetcht0z  0x240(%rbp)
-prefetcht0z  0x300(%rbx)
-vfmadd231pd %ymm2, %ymm3, %ymm12
-vbroadcastsdq  -0x38(%rbp), %ymm3
-vfmadd231pd %ymm0, %ymm3, %ymm5
-vfmadd231pd %ymm1, %ymm3, %ymm9
-vfmadd231pd %ymm2, %ymm3, %ymm13
-vbroadcastsdq  -0x30(%rbp), %ymm3
-vfmadd231pd %ymm0, %ymm3, %ymm6
-vfmadd231pd %ymm1, %ymm3, %ymm10
-vfmadd231pd %ymm2, %ymm3, %ymm14
-vbroadcastsdq  -0x28(%rbp), %ymm3
-prefetcht0z  0x340(%rbx)
-vfmadd231pd %ymm0, %ymm3, %ymm7
-vmovupdy  0xa0(%rbx), %ymm0
-vfmadd231pd %ymm1, %ymm3, %ymm11
-vmovupdy  0xc0(%rbx), %ymm1
-vfmadd231pd %ymm2, %ymm3, %ymm15
-vmovupdy  0xe0(%rbx), %ymm2
-vbroadcastsdq  -0x20(%rbp), %ymm3
-vfmadd231pd %ymm0, %ymm3, %ymm4
-vfmadd231pd %ymm1, %ymm3, %ymm8
-vfmadd231pd %ymm2, %ymm3, %ymm12
-vbroadcastsdq  -0x18(%rbp), %ymm3
-prefetcht0z  0x380(%rbx)
-vfmadd231pd %ymm0, %ymm3, %ymm5
-vfmadd231pd %ymm1, %ymm3, %ymm9
-vfmadd231pd %ymm2, %ymm3, %ymm13
-vbroadcastsdq  -0x10(%rbp), %ymm3
-vfmadd231pd %ymm0, %ymm3, %ymm6
-vfmadd231pd %ymm1, %ymm3, %ymm10
-vfmadd231pd %ymm2, %ymm3, %ymm14
-vbroadcastsdq  -0x8(%rbp), %ymm3
-sub $0xffffffffffffff80, %rbp
-vfmadd231pd %ymm0, %ymm3, %ymm7
-vmovupdy  0x100(%rbx), %ymm0
-vfmadd231pd %ymm1, %ymm3, %ymm11
-vmovupdy  0x120(%rbx), %ymm1
-vfmadd231pd %ymm2, %ymm3, %ymm15
-vmovupdy  0x140(%rbx), %ymm2
-sub $0xfffffffffffffe80, %rbx
-vbroadcastsdq  -0x80(%rbp), %ymm3
-sub $0x1, %rax
-hint-taken jnle 0xaaaa40 <Block 7>
-Block 8:
+movsdq  0x8(%rcx,%rax,1), %xmm13
+movsdq  (%rcx,%rax,1), %xmm11
+movhpdq  0x40(%rcx,%rax,1), %xmm11
+movhpdq  0x48(%rcx,%rax,1), %xmm13
+movupsx  0x620(%rsp), %xmm14
+movupsx  0x610(%rsp), %xmm15
+mulpd %xmm11, %xmm14
+mulpd %xmm13, %xmm15
+movsdq  0x10(%rax,%rcx,1), %xmm10
+movhpdq  0x50(%rax,%rcx,1), %xmm10
+movupsx  0x600(%rsp), %xmm5
+mulpd %xmm10, %xmm5
+addpd %xmm15, %xmm14
+movsdq  0x18(%rax,%rcx,1), %xmm9
+movhpdq  0x58(%rax,%rcx,1), %xmm9
+movupsx  0x5f0(%rsp), %xmm6
+mulpd %xmm9, %xmm6
+addpd %xmm5, %xmm14
+movsdq  0x20(%rax,%rcx,1), %xmm7
+movhpdq  0x60(%rax,%rcx,1), %xmm7
+movupsx  0x5e0(%rsp), %xmm3
+mulpd %xmm7, %xmm3
+addpd %xmm6, %xmm14
+movsdq  0x28(%rax,%rcx,1), %xmm8
+movhpdq  0x68(%rax,%rcx,1), %xmm8
+movupsx  0x5d0(%rsp), %xmm4
+mulpd %xmm8, %xmm4
+addpd %xmm3, %xmm14
+movsdq  0x30(%rax,%rcx,1), %xmm5
+movhpdq  0x70(%rax,%rcx,1), %xmm5
+movupsx  0x5c0(%rsp), %xmm2
+mulpd %xmm5, %xmm2
+addpd %xmm4, %xmm14
+movsdq  0x38(%rax,%rcx,1), %xmm6
+movhpdq  0x78(%rax,%rcx,1), %xmm6
+add $0x80, %rax
+movupsx  0x5b0(%rsp), %xmm3
+mulpd %xmm6, %xmm3
+addpd %xmm2, %xmm14
+movupsx  0x6a0(%rsp), %xmm4
+movupsx  0x690(%rsp), %xmm15
+mulpd %xmm11, %xmm4
+mulpd %xmm13, %xmm15
+addpd %xmm3, %xmm14
+addpd %xmm15, %xmm4
+movupsx  0x680(%rsp), %xmm3
+mulpd %xmm10, %xmm3
+movupsx  0x670(%rsp), %xmm2
+mulpd %xmm9, %xmm2
+addpd %xmm3, %xmm4
 data16 nop 
-Block 9:
-mov %rdx, %rax
-and $0x3, %rax
-jz 0xaaacb0 <Block 12>
-Block 10:
-nopl  %eax, (%rax)
-Block 11:
-vfmadd231pd %ymm0, %ymm3, %ymm4
-vfmadd231pd %ymm1, %ymm3, %ymm8
-vfmadd231pd %ymm2, %ymm3, %ymm12
-vbroadcastsdq  -0x78(%rbp), %ymm3
-vfmadd231pd %ymm0, %ymm3, %ymm5
-vfmadd231pd %ymm1, %ymm3, %ymm9
-vfmadd231pd %ymm2, %ymm3, %ymm13
-vbroadcastsdq  -0x70(%rbp), %ymm3
-vfmadd231pd %ymm0, %ymm3, %ymm6
-vfmadd231pd %ymm1, %ymm3, %ymm10
-vfmadd231pd %ymm2, %ymm3, %ymm14
-vbroadcastsdq  -0x68(%rbp), %ymm3
-vfmadd231pd %ymm0, %ymm3, %ymm7
-vmovupdy  -0x20(%rbx), %ymm0
-vfmadd231pd %ymm1, %ymm3, %ymm11
-vmovupdy  (%rbx), %ymm1
-vfmadd231pd %ymm2, %ymm3, %ymm15
-vmovupdy  0x20(%rbx), %ymm2
-vbroadcastsdq  -0x60(%rbp), %ymm3
-sub $0xffffffffffffffa0, %rbx
-sub $0xffffffffffffffe0, %rbp
-dec %rax
-hint-taken jnle 0xaaac40 <Block 11>
-Block 12:
-vmovupdy  (%r14), %ymm0
-vaddpd %ymm4, %ymm0, %ymm4
-vmovupdy  0x20(%r14), %ymm1
-vaddpd %ymm8, %ymm1, %ymm8
-vmovupdy  0x40(%r14), %ymm2
-vaddpd %ymm12, %ymm2, %ymm12
-vmovupdy  %ymm4, (%r14)
-vmovupdy  %ymm8, 0x20(%r14)
-vmovupdy  %ymm12, 0x40(%r14)
-vmovupdy  (%r14,%r11,1), %ymm0
-vaddpd %ymm5, %ymm0, %ymm5
-vmovupdy  0x20(%r14,%r11,1), %ymm1
-vaddpd %ymm9, %ymm1, %ymm9
-vmovupdy  0x40(%r14,%r11,1), %ymm2
-vaddpd %ymm13, %ymm2, %ymm13
-prefetcht2z  0x40(%rcx)
-vmovupdy  %ymm5, (%r14,%r11,1)
-vmovupdy  %ymm9, 0x20(%r14,%r11,1)
-vmovupdy  %ymm13, 0x40(%r14,%r11,1)
-leaq  (%r14,%r11,4), %r14
-vmovupdy  (%r15), %ymm0
-vaddpd %ymm6, %ymm0, %ymm6
-vmovupdy  0x20(%r15), %ymm1
-vaddpd %ymm10, %ymm1, %ymm10
-vmovupdy  0x40(%r15), %ymm2
-vaddpd %ymm14, %ymm2, %ymm14
-prefetcht2z  0x80(%rcx)
-vmovupdy  %ymm6, (%r15)
-vmovupdy  %ymm10, 0x20(%r15)
-vmovupdy  %ymm14, 0x40(%r15)
-vmovupdy  (%r15,%r11,1), %ymm0
-vaddpd %ymm7, %ymm0, %ymm7
-vmovupdy  0x20(%r15,%r11,1), %ymm1
-vaddpd %ymm11, %ymm1, %ymm11
-vmovupdy  0x40(%r15,%r11,1), %ymm2
-vaddpd %ymm15, %ymm2, %ymm15
-prefetcht2z  0xc0(%rcx)
-vmovupdy  %ymm7, (%r15,%r11,1)
-vmovupdy  %ymm11, 0x20(%r15,%r11,1)
-vmovupdy  %ymm15, 0x40(%r15,%r11,1)
-leaq  (%r15,%r11,4), %r15
-sub $0xfffffffffffffe80, %rcx
-dec %r12
-jnle 0xaaa780 <Block 1>
+movupsx  0x660(%rsp), %xmm3
+mulpd %xmm7, %xmm3
+addpd %xmm2, %xmm4
+movupsx  0x650(%rsp), %xmm15
+mulpd %xmm8, %xmm15
+addpd %xmm3, %xmm4
+movupsx  0x640(%rsp), %xmm3
+mulpd %xmm5, %xmm3
+addpd %xmm15, %xmm4
+movupsx  0x630(%rsp), %xmm2
+mulpd %xmm6, %xmm2
+addpd %xmm3, %xmm4
+movupsx  0x720(%rsp), %xmm3
+movupsx  0x710(%rsp), %xmm15
+mulpd %xmm11, %xmm3
+mulpd %xmm13, %xmm15
+addpd %xmm2, %xmm4
+addpd %xmm15, %xmm3
+movupsx  0x700(%rsp), %xmm2
+mulpd %xmm10, %xmm2
+movupsx  0x6f0(%rsp), %xmm15
+mulpd %xmm9, %xmm15
+addpd %xmm2, %xmm3
+movupsx  0x6e0(%rsp), %xmm2
+mulpd %xmm7, %xmm2
+addpd %xmm15, %xmm3
+movupsx  0x6d0(%rsp), %xmm15
+mulpd %xmm8, %xmm15
+addpd %xmm2, %xmm3
+movupsx  0x6c0(%rsp), %xmm2
+mulpd %xmm5, %xmm2
+addpd %xmm15, %xmm3
+movupsx  0x6b0(%rsp), %xmm15
+mulpd %xmm6, %xmm15
+addpd %xmm2, %xmm3
+movupsx  0x7a0(%rsp), %xmm2
+addpd %xmm15, %xmm3
+mulpd %xmm14, %xmm2
+movupsx  0x550(%rsp), %xmm15
+mulpd %xmm4, %xmm15
+addpd %xmm15, %xmm2
+movupsx  0x4e0(%rsp), %xmm15
+mulpd %xmm3, %xmm15
+addpd %xmm15, %xmm2
+mulpd %xmm12, %xmm2
+subpd %xmm2, %xmm11
+movupsx  %xmm11, 0x100(%rsp,%rdx,8)
+movupsx  0x790(%rsp), %xmm15
+movupsx  0x540(%rsp), %xmm11
+mulpd %xmm14, %xmm15
+mulpd %xmm4, %xmm11
+movupsx  0x7b0(%rsp), %xmm2
+mulpd %xmm3, %xmm2
+addpd %xmm11, %xmm15
+addpd %xmm2, %xmm15
+mulpd %xmm12, %xmm15
+subpd %xmm15, %xmm13
+movupsx  %xmm13, 0x120(%rsp,%rdx,8)
+movupsx  0x780(%rsp), %xmm11
+movupsx  0x500(%rsp), %xmm13
+mulpd %xmm14, %xmm11
+mulpd %xmm4, %xmm13
+movupsx  0x580(%rsp), %xmm2
+mulpd %xmm3, %xmm2
+addpd %xmm13, %xmm11
+addpd %xmm2, %xmm11
+mulpd %xmm12, %xmm11
+subpd %xmm11, %xmm10
+movupsx  %xmm10, 0x140(%rsp,%rdx,8)
+movupsx  0x770(%rsp), %xmm11
+movupsx  0x4f0(%rsp), %xmm10
+mulpd %xmm14, %xmm11
+mulpd %xmm4, %xmm10
+movupsx  0x590(%rsp), %xmm2
+mulpd %xmm3, %xmm2
+addpd %xmm10, %xmm11
+addpd %xmm2, %xmm11
+mulpd %xmm12, %xmm11
+subpd %xmm11, %xmm9
+movupsx  %xmm9, 0x160(%rsp,%rdx,8)
+movaps %xmm1, %xmm2
+movupsx  0x760(%rsp), %xmm10
+movupsx  0x570(%rsp), %xmm9
+mulpd %xmm14, %xmm10
+mulpd %xmm4, %xmm9
+mulpd %xmm3, %xmm2
+addpd %xmm9, %xmm10
+addpd %xmm2, %xmm10
+mulpd %xmm12, %xmm10
+subpd %xmm10, %xmm7
+movupsx  %xmm7, 0x180(%rsp,%rdx,8)
+nop 
+movupsx  0x750(%rsp), %xmm9
+movupsx  0x530(%rsp), %xmm7
+mulpd %xmm14, %xmm9
+mulpd %xmm4, %xmm7
+movupsx  0x5a0(%rsp), %xmm2
+mulpd %xmm3, %xmm2
+addpd %xmm7, %xmm9
+addpd %xmm2, %xmm9
+mulpd %xmm12, %xmm9
+subpd %xmm9, %xmm8
+movupsx  %xmm8, 0x1a0(%rsp,%rdx,8)
+movupsx  0x740(%rsp), %xmm2
+movupsx  0x520(%rsp), %xmm8
+mulpd %xmm14, %xmm2
+mulpdx  0x730(%rsp), %xmm14
+mulpd %xmm4, %xmm8
+mulpdx  0x510(%rsp), %xmm4
+addpd %xmm8, %xmm2
+addpd %xmm4, %xmm14
+movaps %xmm0, %xmm4
+mulpd %xmm3, %xmm4
+mulpdx  0x560(%rsp), %xmm3
+addpd %xmm4, %xmm2
+addpd %xmm3, %xmm14
+mulpd %xmm12, %xmm2
+mulpd %xmm12, %xmm14
+subpd %xmm2, %xmm5
+subpd %xmm14, %xmm6
+movupsx  %xmm5, 0x1c0(%rsp,%rdx,8)
+movupsx  %xmm6, 0x1e0(%rsp,%rdx,8)
+add $0x2, %rdx
+cmp $0x4, %rdx
+jb 0x412a1b <Block 1>

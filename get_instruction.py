@@ -1,5 +1,5 @@
 from instruction_id import *
-from instruction_counter import *
+from instruction_sorter import *
 
 import re
 
@@ -321,4 +321,6 @@ f.close()
 
 divideIntoBlocks()
 
-printInstructionMix(opcodes, labels, insSets, dataModes, dataTypes)
+#printInstructionMix(opcodes, labels, insSets, dataModes, dataTypes)
+
+sort_instructions()
