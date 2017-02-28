@@ -1,177 +1,113 @@
 Block 1:
-movsdq  0x8(%rcx,%rax,1), %xmm13
-movsdq  (%rcx,%rax,1), %xmm11
-movhpdq  0x40(%rcx,%rax,1), %xmm11
-movhpdq  0x48(%rcx,%rax,1), %xmm13
-movupsx  0x620(%rsp), %xmm14
-movupsx  0x610(%rsp), %xmm15
-mulpd %xmm11, %xmm14
-mulpd %xmm13, %xmm15
-movsdq  0x10(%rax,%rcx,1), %xmm10
-movhpdq  0x50(%rax,%rcx,1), %xmm10
-movupsx  0x600(%rsp), %xmm5
-mulpd %xmm10, %xmm5
-addpd %xmm15, %xmm14
-movsdq  0x18(%rax,%rcx,1), %xmm9
-movhpdq  0x58(%rax,%rcx,1), %xmm9
-movupsx  0x5f0(%rsp), %xmm6
-mulpd %xmm9, %xmm6
-addpd %xmm5, %xmm14
-movsdq  0x20(%rax,%rcx,1), %xmm7
-movhpdq  0x60(%rax,%rcx,1), %xmm7
-movupsx  0x5e0(%rsp), %xmm3
-mulpd %xmm7, %xmm3
-addpd %xmm6, %xmm14
-movsdq  0x28(%rax,%rcx,1), %xmm8
-movhpdq  0x68(%rax,%rcx,1), %xmm8
-movupsx  0x5d0(%rsp), %xmm4
-mulpd %xmm8, %xmm4
-addpd %xmm3, %xmm14
-movsdq  0x30(%rax,%rcx,1), %xmm5
-movhpdq  0x70(%rax,%rcx,1), %xmm5
-movupsx  0x5c0(%rsp), %xmm2
-mulpd %xmm5, %xmm2
-addpd %xmm4, %xmm14
-movsdq  0x38(%rax,%rcx,1), %xmm6
-movhpdq  0x78(%rax,%rcx,1), %xmm6
-add $0x80, %rax
-movupsx  0x5b0(%rsp), %xmm3
-mulpd %xmm6, %xmm3
-addpd %xmm2, %xmm14
-movupsx  0x6a0(%rsp), %xmm4
-movupsx  0x690(%rsp), %xmm15
-mulpd %xmm11, %xmm4
-mulpd %xmm13, %xmm15
-addpd %xmm3, %xmm14
-addpd %xmm15, %xmm4
-movupsx  0x680(%rsp), %xmm3
-mulpd %xmm10, %xmm3
-movupsx  0x670(%rsp), %xmm2
-mulpd %xmm9, %xmm2
-addpd %xmm3, %xmm4
-data16 nop 
-movupsx  0x660(%rsp), %xmm3
-mulpd %xmm7, %xmm3
-addpd %xmm2, %xmm4
-movupsx  0x650(%rsp), %xmm15
-mulpd %xmm8, %xmm15
-addpd %xmm3, %xmm4
-movupsx  0x640(%rsp), %xmm3
-mulpd %xmm5, %xmm3
-addpd %xmm15, %xmm4
-movupsx  0x630(%rsp), %xmm2
-mulpd %xmm6, %xmm2
-addpd %xmm3, %xmm4
-movupsx  0x720(%rsp), %xmm3
-movupsx  0x710(%rsp), %xmm15
-mulpd %xmm11, %xmm3
-mulpd %xmm13, %xmm15
-addpd %xmm2, %xmm4
-addpd %xmm15, %xmm3
-movupsx  0x700(%rsp), %xmm2
-mulpd %xmm10, %xmm2
-movupsx  0x6f0(%rsp), %xmm15
-mulpd %xmm9, %xmm15
-addpd %xmm2, %xmm3
-movupsx  0x6e0(%rsp), %xmm2
-mulpd %xmm7, %xmm2
-addpd %xmm15, %xmm3
-movupsx  0x6d0(%rsp), %xmm15
-mulpd %xmm8, %xmm15
-addpd %xmm2, %xmm3
-movupsx  0x6c0(%rsp), %xmm2
-mulpd %xmm5, %xmm2
-addpd %xmm15, %xmm3
-movupsx  0x6b0(%rsp), %xmm15
-mulpd %xmm6, %xmm15
-addpd %xmm2, %xmm3
-movupsx  0x7a0(%rsp), %xmm2
-addpd %xmm15, %xmm3
-mulpd %xmm14, %xmm2
-movupsx  0x550(%rsp), %xmm15
-mulpd %xmm4, %xmm15
-addpd %xmm15, %xmm2
-movupsx  0x4e0(%rsp), %xmm15
-mulpd %xmm3, %xmm15
-addpd %xmm15, %xmm2
-mulpd %xmm12, %xmm2
-subpd %xmm2, %xmm11
-movupsx  %xmm11, 0x100(%rsp,%rdx,8)
-movupsx  0x790(%rsp), %xmm15
-movupsx  0x540(%rsp), %xmm11
-mulpd %xmm14, %xmm15
-mulpd %xmm4, %xmm11
-movupsx  0x7b0(%rsp), %xmm2
-mulpd %xmm3, %xmm2
-addpd %xmm11, %xmm15
-addpd %xmm2, %xmm15
-mulpd %xmm12, %xmm15
-subpd %xmm15, %xmm13
-movupsx  %xmm13, 0x120(%rsp,%rdx,8)
-movupsx  0x780(%rsp), %xmm11
-movupsx  0x500(%rsp), %xmm13
-mulpd %xmm14, %xmm11
-mulpd %xmm4, %xmm13
-movupsx  0x580(%rsp), %xmm2
-mulpd %xmm3, %xmm2
-addpd %xmm13, %xmm11
-addpd %xmm2, %xmm11
-mulpd %xmm12, %xmm11
-subpd %xmm11, %xmm10
-movupsx  %xmm10, 0x140(%rsp,%rdx,8)
-movupsx  0x770(%rsp), %xmm11
-movupsx  0x4f0(%rsp), %xmm10
-mulpd %xmm14, %xmm11
-mulpd %xmm4, %xmm10
-movupsx  0x590(%rsp), %xmm2
-mulpd %xmm3, %xmm2
-addpd %xmm10, %xmm11
-addpd %xmm2, %xmm11
-mulpd %xmm12, %xmm11
-subpd %xmm11, %xmm9
-movupsx  %xmm9, 0x160(%rsp,%rdx,8)
-movaps %xmm1, %xmm2
-movupsx  0x760(%rsp), %xmm10
-movupsx  0x570(%rsp), %xmm9
-mulpd %xmm14, %xmm10
-mulpd %xmm4, %xmm9
-mulpd %xmm3, %xmm2
-addpd %xmm9, %xmm10
-addpd %xmm2, %xmm10
-mulpd %xmm12, %xmm10
-subpd %xmm10, %xmm7
-movupsx  %xmm7, 0x180(%rsp,%rdx,8)
-nop 
-movupsx  0x750(%rsp), %xmm9
-movupsx  0x530(%rsp), %xmm7
-mulpd %xmm14, %xmm9
-mulpd %xmm4, %xmm7
-movupsx  0x5a0(%rsp), %xmm2
-mulpd %xmm3, %xmm2
-addpd %xmm7, %xmm9
-addpd %xmm2, %xmm9
-mulpd %xmm12, %xmm9
-subpd %xmm9, %xmm8
-movupsx  %xmm8, 0x1a0(%rsp,%rdx,8)
-movupsx  0x740(%rsp), %xmm2
-movupsx  0x520(%rsp), %xmm8
-mulpd %xmm14, %xmm2
-mulpdx  0x730(%rsp), %xmm14
-mulpd %xmm4, %xmm8
-mulpdx  0x510(%rsp), %xmm4
-addpd %xmm8, %xmm2
-addpd %xmm4, %xmm14
-movaps %xmm0, %xmm4
-mulpd %xmm3, %xmm4
-mulpdx  0x560(%rsp), %xmm3
-addpd %xmm4, %xmm2
-addpd %xmm3, %xmm14
-mulpd %xmm12, %xmm2
-mulpd %xmm12, %xmm14
-subpd %xmm2, %xmm5
-subpd %xmm14, %xmm6
-movupsx  %xmm5, 0x1c0(%rsp,%rdx,8)
-movupsx  %xmm6, 0x1e0(%rsp,%rdx,8)
-add $0x2, %rdx
-cmp $0x4, %rdx
-jb 0x412a1b <Block 1>
+movl  (%rdi,%rcx,4), %r14d
+pxor %xmm0, %xmm0
+dec %r14d
+movsxd %r14d, %r14
+movsxdl  -0x4(%rdi,%rcx,4), %r11
+cmp %r11, %r14
+jl 0x4066a3 <Block 15>
+Block 2:
+sub %r11, %r14
+inc %r14
+cmp $0x8, %r14
+jl 0x40797b <Block 16>
+Block 3:
+leaq  (%rax,%r11,8), %r9
+leaq  -0x8(%r9), %rsi
+and $0xf, %rsi
+test %esi, %esi
+jz 0x406562 <Block 6>
+Block 4:
+test $0x7, %esi
+jnz 0x40797b <Block 16>
+Block 5:
+mov %r15d, %esi
+Block 6:
+mov %esi, %ebp
+leaq  0x8(%rbp), %r10
+cmp %r10, %r14
+jl 0x40797b <Block 16>
+Block 7:
+mov %r14d, %r13d
+neg %esi
+add %r13d, %esi
+xor %r10d, %r10d
+and $0x7, %esi
+sub %esi, %r13d
+leaq  (%rdx,%r11,4), %rsi
+movsxd %r13d, %r13
+test %rbp, %rbp
+jbe 0x4065b3 <Block 10>
+Block 8:
+movsxdl  -0x4(%rsi,%r10,4), %r15
+movsdq  -0x8(%r9,%r10,8), %xmm3
+inc %r10
+cmp %rbp, %r10
+mulsdq  -0x8(%r12,%r15,8), %xmm3
+addsd %xmm3, %xmm0
+jb 0x40658e <Block 8>
+Block 9:
+mov $0x1, %r15d
+Block 10:
+movaps %xmm2, %xmm5
+movaps %xmm1, %xmm4
+movsd %xmm0, %xmm5
+movaps %xmm1, %xmm3
+movaps %xmm1, %xmm0
+Block 11:
+movsxdl  -0x4(%rsi,%rbp,4), %r10
+movsdq  -0x8(%r12,%r10,8), %xmm6
+movsxdl  (%rsi,%rbp,4), %r10
+movhpdq  -0x8(%r12,%r10,8), %xmm6
+movsxdl  0x4(%rsi,%rbp,4), %r10
+mulpdx  -0x8(%r9,%rbp,8), %xmm6
+movsdq  -0x8(%r12,%r10,8), %xmm7
+movsxdl  0x8(%rsi,%rbp,4), %r10
+addpd %xmm6, %xmm5
+movhpdq  -0x8(%r12,%r10,8), %xmm7
+movsxdl  0xc(%rsi,%rbp,4), %r10
+mulpdx  0x8(%r9,%rbp,8), %xmm7
+movsdq  -0x8(%r12,%r10,8), %xmm8
+movsxdl  0x10(%rsi,%rbp,4), %r10
+addpd %xmm7, %xmm4
+movhpdq  -0x8(%r12,%r10,8), %xmm8
+movsxdl  0x14(%rsi,%rbp,4), %r10
+mulpdx  0x18(%r9,%rbp,8), %xmm8
+movsdq  -0x8(%r12,%r10,8), %xmm9
+movsxdl  0x18(%rsi,%rbp,4), %r10
+addpd %xmm8, %xmm3
+movhpdq  -0x8(%r12,%r10,8), %xmm9
+mulpdx  0x28(%r9,%rbp,8), %xmm9
+add $0x8, %rbp
+addpd %xmm9, %xmm0
+cmp %r13, %rbp
+jb 0x4065c3 <Block 11>
+Block 12:
+addpd %xmm4, %xmm5
+addpd %xmm0, %xmm3
+addpd %xmm3, %xmm5
+movaps %xmm5, %xmm0
+unpckhpd %xmm5, %xmm0
+addsd %xmm0, %xmm5
+movaps %xmm5, %xmm0
+cmp %r14, %r13
+jnb 0x4066a3 <Block 15>
+Block 13:
+leaq  (%rax,%r11,8), %rsi
+leaq  (%rdx,%r11,4), %rbp
+Block 14:
+movsxdl  -0x4(%rbp,%r13,4), %r9
+movsdq  -0x8(%rsi,%r13,8), %xmm3
+inc %r13
+cmp %r14, %r13
+mulsdq  -0x8(%r12,%r9,8), %xmm3
+addsd %xmm3, %xmm0
+jb 0x406684 <Block 14>
+Block 15:
+movsdq  %xmm0, -0x8(%r8,%rcx,8)
+inc %rcx
+cmp %rbx, %rcx
+jb 0x406517 <Block 1>
+Block 16:
+xor %r13d, %r13d
+jmp 0x406677
